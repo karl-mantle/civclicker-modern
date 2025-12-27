@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useSetAtom } from "jotai";
-import { tickAtom } from "./atoms/gameLoop";
+import { tickAtom } from "./atoms/tick";
 import { Game } from "./components/Game";
 
 function App() {

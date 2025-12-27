@@ -1,8 +1,10 @@
 import { atom } from "jotai";
 import { foodAtom, woodAtom } from "./resources";
-import { foodPerSecondAtom, woodPerSecondAtom } from "./rates";
+import { foodPerSecondAtom, woodPerSecondAtom } from "./production";
+import { growPopulationAtom } from "./population";
 
 let lastTick = Date.now();
+let popGrowthTimer = 0;
 
 export const tickAtom = atom(null, (get, set) => {
   const now = Date.now();
@@ -11,4 +13,10 @@ export const tickAtom = atom(null, (get, set) => {
 
   set(foodAtom, (food) => food + get(foodPerSecondAtom) * delta);
   set(woodAtom, (wood) => wood + get(woodPerSecondAtom) * delta);
+
+  popGrowthTimer += delta;
+  if (popGrowthTimer >= 20) {
+    popGrowthTimer -= 20;
+    set(growPopulationAtom);
+  }
 });

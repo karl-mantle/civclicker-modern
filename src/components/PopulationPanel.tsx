@@ -4,7 +4,7 @@ import {
   assignFarmerAtom,
   unassignFarmerAtom,
 } from "../atoms/populationActions";
-import { foodPerSecondAtom } from "../atoms/rates";
+import { foodPerSecondAtom } from "../atoms/production";
 
 export function PopulationPanel() {
   const [farmers] = useAtom(farmersAtom);

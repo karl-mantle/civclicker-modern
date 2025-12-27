@@ -1,5 +1,6 @@
 import { ResourcePanel } from "./ResourcePanel";
-import { PopulationPanel } from "./PopulatonPanel";
+import { PopulationPanel } from "./PopulationPanel";
+import { BuildingPanel } from "./BuildingPanel";
 
 export function Game() {
   return (
@@ -7,6 +8,7 @@ export function Game() {
       <h1>CivClicker</h1>
       <ResourcePanel />
       <PopulationPanel />
+      <BuildingPanel />
     </div>
   );
 }
