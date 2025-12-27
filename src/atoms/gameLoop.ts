@@ -1,5 +1,6 @@
 import { atom } from "jotai";
-import { foodAtom } from "./resources";
+import { foodAtom, woodAtom } from "./resources";
+import { foodPerSecondAtom, woodPerSecondAtom } from "./rates";
 
 let lastTick = Date.now();
 
@@ -8,6 +9,6 @@ export const tickAtom = atom(null, (get, set) => {
   const delta = (now - lastTick) / 1000;
   lastTick = now;
 
-  /* temp */
-  set(foodAtom, (food) => food + delta * 0.1);
+  set(foodAtom, (food) => food + get(foodPerSecondAtom) * delta);
+  set(woodAtom, (wood) => wood + get(woodPerSecondAtom) * delta);
 });
