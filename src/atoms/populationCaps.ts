@@ -1,5 +1,5 @@
 import { atom } from "jotai";
 import { hutsAtom } from "./buildings";
-import { populationCap } from "../engine/population";
+import { getPopulationCap } from "../engine/population";
 
-export const populationCapAtom = atom((get) => populationCap(get(hutsAtom)));
+export const populationCapAtom = atom((get) => getPopulationCap(get(hutsAtom)));

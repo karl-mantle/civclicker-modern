@@ -14,7 +14,7 @@ export const unassignFarmerAtom = atom(null, (get, set) => {
 });
 
 export const assignWoodcutterAtom = atom(null, (get, set) => {
-  if (get(woodcuttersAtom) > 0) {
+  if (get(idlePopulationAtom) > 0) {
     set(woodcuttersAtom, (n) => n + 1);
   }
 });

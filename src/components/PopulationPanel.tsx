@@ -1,17 +1,27 @@
 import { useAtom, useSetAtom } from "jotai";
-import { farmersAtom, idlePopulationAtom } from "../atoms/population";
+import {
+  farmersAtom,
+  idlePopulationAtom,
+  woodcuttersAtom,
+} from "../atoms/population";
 import {
   assignFarmerAtom,
   unassignFarmerAtom,
+  assignWoodcutterAtom,
+  unassignWoodcutterAtom,
 } from "../atoms/populationActions";
-import { foodPerSecondAtom } from "../atoms/production";
+import { foodPerSecondAtom, woodPerSecondAtom } from "../atoms/production";
 
 export function PopulationPanel() {
-  const [farmers] = useAtom(farmersAtom);
   const [idle] = useAtom(idlePopulationAtom);
+  const [farmers] = useAtom(farmersAtom);
+  const [woodcutters] = useAtom(woodcuttersAtom);
   const [foodRate] = useAtom(foodPerSecondAtom);
-  const assign = useSetAtom(assignFarmerAtom);
-  const unassign = useSetAtom(unassignFarmerAtom);
+  const [woodRate] = useAtom(woodPerSecondAtom);
+  const assignFarmer = useSetAtom(assignFarmerAtom);
+  const unassignFarmer = useSetAtom(unassignFarmerAtom);
+  const assignWoodcutter = useSetAtom(assignWoodcutterAtom);
+  const unassignWoodcutter = useSetAtom(unassignWoodcutterAtom);
 
   return (
     <div>
@@ -20,8 +30,14 @@ export function PopulationPanel() {
       <p>Farmers: {farmers}</p>
       <p>Food/sec: {foodRate.toFixed(2)}</p>
 
-      <button onClick={assign}>+ Farmer</button>
-      <button onClick={unassign}>- Farmer</button>
+      <button onClick={assignFarmer}>+ Farmer</button>
+      <button onClick={unassignFarmer}>- Farmer</button>
+
+      <p>Woodcutters: {woodcutters}</p>
+      <p>Wood/sec: {woodRate.toFixed(2)}</p>
+
+      <button onClick={assignWoodcutter}>+ Woodcutter</button>
+      <button onClick={unassignWoodcutter}>- Woodcutter</button>
     </div>
   );
 }

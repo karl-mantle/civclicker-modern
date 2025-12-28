@@ -24,8 +24,9 @@ function App() {
 
       const foodGained = progressedSave.resources.food - save.resources.food;
       const woodGained = progressedSave.resources.wood - save.resources.wood;
+      const gainedPop = progressedSave.population.total - save.population.total;
       console.log(
-        `Welcome back! Offline gains: +${foodGained.toFixed(
+        `Welcome back! Offline gains: +${gainedPop} population, +${foodGained.toFixed(
           1
         )} food, +${woodGained.toFixed(1)} wood`
       );
