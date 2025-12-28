@@ -6,6 +6,7 @@ import type { SaveV1 } from "../engine/save";
 
 export const saveAtom = atom<SaveV1>((get) => ({
   version: 1,
+  lastSavedAt: Date.now(),
 
   resources: {
     food: get(foodAtom),

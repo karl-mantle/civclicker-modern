@@ -1,5 +1,6 @@
 export interface SaveV1 {
   version: 1;
+  lastSavedAt: number; // ms
 
   resources: {
     food: number;

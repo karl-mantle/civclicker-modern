@@ -20,3 +20,8 @@ export const tickAtom = atom(null, (get, set) => {
     set(growPopulationAtom);
   }
 });
+
+export function resetTick() {
+  lastTick = Date.now();
+  popGrowthTimer = 0;
+}

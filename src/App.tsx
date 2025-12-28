@@ -4,8 +4,9 @@ import { hydratedAtom } from "./atoms/hydration";
 import { loadSaveAtom } from "./atoms/loadSave";
 import { loadLocal } from "./lib/localSave";
 import { useAutosave } from "./hooks/autosave";
-import { tickAtom } from "./atoms/tick";
+import { tickAtom, resetTick } from "./atoms/tick";
 import { Game } from "./components/Game";
+import { applyOfflineProgress } from "./engine/offlineProgression";
 
 function App() {
   const loadSave = useSetAtom(loadSaveAtom);
@@ -17,7 +18,17 @@ function App() {
 
     const save = loadLocal();
     if (save) {
-      loadSave(save);
+      const progressedSave = applyOfflineProgress(save);
+      loadSave(progressedSave);
+      resetTick();
+
+      const foodGained = progressedSave.resources.food - save.resources.food;
+      const woodGained = progressedSave.resources.wood - save.resources.wood;
+      console.log(
+        `Welcome back! Offline gains: +${foodGained.toFixed(
+          1
+        )} food, +${woodGained.toFixed(1)} wood`
+      );
     }
 
     setHydrated(true);
