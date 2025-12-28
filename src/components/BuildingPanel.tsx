@@ -1,6 +1,6 @@
 import { useAtom, useSetAtom } from "jotai";
 import { hutsAtom, farmsAtom, lumberCampsAtom } from "../atoms/buildings";
-import { populationCapAtom } from "../atoms/populationCap";
+import { populationCapAtom } from "../atoms/populationCaps";
 import { buildBuildingAtom } from "../atoms/buildingsActions";
 import { BUILDINGS } from "../engine/buildings";
 

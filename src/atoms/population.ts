@@ -1,5 +1,5 @@
 import { atom } from "jotai";
-import { populationCapAtom } from "./populationCap";
+import { populationCapAtom } from "./populationCaps";
 
 export const populationAtom = atom(1);
 
