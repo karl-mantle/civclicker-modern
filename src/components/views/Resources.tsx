@@ -1,5 +1,5 @@
 import { useAtom } from "jotai";
-import { foodAtom, woodAtom } from "../atoms/resources";
+import { foodAtom, woodAtom } from "@atoms/resources";
 
 export function ResourcePanel() {
   const [food, setFood] = useAtom(foodAtom);

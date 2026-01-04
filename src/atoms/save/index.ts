@@ -1,8 +1,13 @@
+import type { SaveV1 } from "@engine/save";
+/* atoms */
 import { atom } from "jotai";
-import { foodAtom, woodAtom } from "./resources";
-import { populationAtom, farmersAtom, woodcuttersAtom } from "./population";
-import { hutsAtom, farmsAtom, lumberCampsAtom } from "./buildings";
-import type { SaveV1 } from "../engine/save";
+import { hutsAtom, farmsAtom, lumberCampsAtom } from "@atoms/buildings";
+import {
+  populationAtom,
+  farmersAtom,
+  woodcuttersAtom,
+} from "@atoms/population";
+import { foodAtom, woodAtom } from "@atoms/resources";
 
 export const saveAtom = atom<SaveV1>((get) => ({
   version: 1,

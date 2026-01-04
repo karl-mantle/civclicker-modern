@@ -1,8 +1,9 @@
+import { saveLocal } from "@engine/save";
+/* atoms */
 import { useAtomValue } from "jotai";
 import { useEffect, useRef } from "react";
-import { hydratedAtom } from "../atoms/hydration";
-import { saveAtom } from "../atoms/save";
-import { saveLocal } from "../lib/localSave";
+import { hydratedAtom } from "@atoms/game";
+import { saveAtom } from "@atoms/save";
 
 export function useAutosave(intervalMs = 60_000) {
   const hydrated = useAtomValue(hydratedAtom);

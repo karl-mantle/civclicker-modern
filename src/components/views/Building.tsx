@@ -1,8 +1,8 @@
 import { useAtom, useSetAtom } from "jotai";
-import { hutsAtom, farmsAtom, lumberCampsAtom } from "../atoms/buildings";
-import { populationCapAtom } from "../atoms/populationCaps";
-import { buildBuildingAtom } from "../atoms/buildingsActions";
-import { BUILDINGS } from "../engine/buildings";
+import { hutsAtom, farmsAtom, lumberCampsAtom } from "@atoms/buildings";
+import { populationCapAtom } from "@atoms/population/limits";
+import { buildBuildingAtom } from "@atoms/buildings/actions";
+import { BUILDINGS } from "@engine/buildings";
 
 export function BuildingPanel() {
   const [cap] = useAtom(populationCapAtom);

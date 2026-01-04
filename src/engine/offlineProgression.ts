@@ -1,7 +1,7 @@
-import type { SaveV1 } from "./save";
-import { MAX_OFFLINE_SECONDS } from "./constants";
-import { foodPerSecond, woodPerSecond } from "./resources";
-import { applyPopulationGrowth, getPopulationCap } from "./population";
+import type { SaveV1 } from "@engine/save";
+import { MAX_OFFLINE_SECONDS } from "@engine/constants";
+import { foodPerSecond, woodPerSecond } from "@engine/resources";
+import { applyPopulationGrowth, getPopulationCap } from "@engine/population";
 
 export function applyOfflineProgress(save: SaveV1): SaveV1 {
   const now = Date.now();

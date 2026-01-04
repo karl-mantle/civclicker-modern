@@ -1,12 +1,13 @@
 import { useEffect } from "react";
+import { Window } from "@components/Window";
+import { applyOfflineProgress } from "@engine/offlineProgression";
+import { loadLocal } from "@engine/save";
+import { useAutosave } from "@hooks/autosave";
+/* atoms */
 import { useAtom, useSetAtom } from "jotai";
-import { hydratedAtom } from "./atoms/hydration";
-import { loadSaveAtom } from "./atoms/loadSave";
-import { loadLocal } from "./lib/localSave";
-import { useAutosave } from "./hooks/autosave";
-import { tickAtom, resetTick } from "./atoms/tick";
-import { Game } from "./components/Game";
-import { applyOfflineProgress } from "./engine/offlineProgression";
+import { hydratedAtom } from "@atoms/game";
+import { tickAtom, resetTick } from "@atoms/game/tick";
+import { loadSaveAtom } from "@atoms/save/loadSave";
 
 function App() {
   const loadSave = useSetAtom(loadSaveAtom);
@@ -44,7 +45,7 @@ function App() {
     return () => clearInterval(id);
   }, [hydrated, tick]);
 
-  return <Game />;
+  return <Window />;
 }
 
 export default App;

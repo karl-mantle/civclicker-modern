@@ -1,4 +1,4 @@
-import { FOOD_COST, GROWTH_INTERVAL } from "./constants";
+import { FOOD_COST, GROWTH_INTERVAL } from "@engine/constants";
 
 interface PopulationState {
   total: number;

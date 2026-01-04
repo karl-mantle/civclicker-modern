@@ -1,5 +1,9 @@
 import { atom } from "jotai";
-import { farmersAtom, woodcuttersAtom, idlePopulationAtom } from "./population";
+import {
+  farmersAtom,
+  woodcuttersAtom,
+  idlePopulationAtom,
+} from "@atoms/population";
 
 export const assignFarmerAtom = atom(null, (get, set) => {
   if (get(idlePopulationAtom) > 0) {

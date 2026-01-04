@@ -1,7 +1,8 @@
+import { foodPerSecond, woodPerSecond } from "@engine/resources";
+/* atoms */
 import { atom } from "jotai";
-import { farmersAtom, woodcuttersAtom } from "./population";
-import { farmsAtom, lumberCampsAtom } from "./buildings";
-import { foodPerSecond, woodPerSecond } from "../engine/resources";
+import { farmersAtom, woodcuttersAtom } from "@atoms/population";
+import { farmsAtom, lumberCampsAtom } from "@atoms/buildings";
 
 export const foodPerSecondAtom = atom((get) =>
   foodPerSecond(get(farmersAtom), get(farmsAtom))

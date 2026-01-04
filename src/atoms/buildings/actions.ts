@@ -1,7 +1,8 @@
+import { BUILDINGS, type BuildingType } from "@engine/buildings";
+/* atoms */
 import { atom } from "jotai";
-import { hutsAtom, farmsAtom, lumberCampsAtom } from "./buildings";
-import { foodAtom, woodAtom } from "./resources";
-import { BUILDINGS, type BuildingType } from "../engine/buildings";
+import { hutsAtom, farmsAtom, lumberCampsAtom } from "@atoms/buildings/";
+import { foodAtom, woodAtom } from "@atoms/resources/";
 
 const RESOURCE_ATOMS = {
   wood: woodAtom,

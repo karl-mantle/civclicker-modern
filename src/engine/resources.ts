@@ -1,4 +1,7 @@
-import { BASE_FOOD_PER_FARMER, BASE_WOOD_PER_WOODCUTTER } from "./constants";
+import {
+  BASE_FOOD_PER_FARMER,
+  BASE_WOOD_PER_WOODCUTTER,
+} from "@engine/constants";
 
 export function foodPerSecond(farmers: number, farms: number): number {
   return farmers * (BASE_FOOD_PER_FARMER + farms * 0.1);
